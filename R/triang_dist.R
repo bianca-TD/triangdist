@@ -63,6 +63,7 @@ qtriang <- function(p, min, max, mode) {
 
 #' @rdname triangular
 #' @export
+#' @importFrom stats runif
 rtriang <- function(n, min, max, mode) {
   return(qtriang(runif(n), min, max, mode))
 }
