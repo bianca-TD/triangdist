@@ -1,0 +1,60 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# triangdist
+
+-El objetivo de triangdist es proporcionar las funciones esenciales para trabajar con la distribución triangular: densidad (`dtriang`), distribución acumulada (`ptriang`), cuantiles (`qtriang`) y generación de números aleatorios (`rtriang`).
+
+## Instalación
+
+Puedes instalar la versión de desarrollo de triangdist desde GitHub(https://github.com/) con:
+``` r
+# install.packages("pak")
+pak::pak("bianca-TD/triangdist")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(triangdist)
+## basic example code
+# 1. Aqui, calculamos la densidad:
+dtriang(x = 5, min = 0, max = 10, mode = 5)
+
+# 2. Así, calculariamos la probabilidad acumulada hasta el punto medio:
+ptriang(q = 5, min = 0, max = 10, mode = 5)
+
+# 3. Y así, generariamos 5 números aleatorios basados en la distribución
+set.seed(123)
+rtriang(n = 5, min = 0, max = 10, mode = 5)
+```
+
+What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+
+```{r cars}
+summary(cars)
+```
+
+You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
+
+You can also embed plots, for example:
+
+```{r pressure, echo = FALSE}
+plot(pressure)
+```
+
+In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
